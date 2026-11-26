@@ -1,119 +1,87 @@
-// OBJETO
-// const nome = 'nome: ze da manga e idade: 17';
-// const idade = 17;
 
-// console.log(nome); //"ze da manga"
-// console.log(idade);
-
-// chave: valor
-// const dadosUsuario = {
-//     nome: 'Ze da Manga',
-//     idade: 17,
-//     endereco: {
-//         rua: 'dos bobo',
-//         numero: '188',
-//         cep: '16767-66',
-//         bairro: 'sé',
-//         regiao: {
-//             cidade: 'qualque uma menos sumaré',
-//             estado: 'SP',
-//             país: 'Brasil',
-//         }
-//     }
-// }
-
-// console.log(dadosUsuario);
-// console.log(dadosUsuario.nome);
-// console.log(dadosUsuario.idade);
-
-// console.log(dadosUsuario);
+const perifericos = [
+    'Teclado Mecânico', 'Mouse Gamer', 'Headset', 'Monitor', 'Mousepad'
+];
 
 
-// //LISTAS (vetor, array)
-// //lista de valores
-// const listaDeFrutas = [
-//     'maca', 'banana', 'jaca', 'buriti'
-// ];
+perifericos[2] = 'Webcam Full HD';
 
-// // console.log(listaDeFrutas);
-
-// // console.log(listaDeFrutas[1]);
-
-// for (let contador = 0; contador < 4; contador = contador + 1) {
-//     console.log(listaDeFrutas[contador])
-// }
-
-
-// const listaExemplo = [
-//     {
-//         nome: 'ola',
-//         idade: 17,
-//         listaDeContatos: [
-//             '13213131315', '41368413513', '564684354'
-//         ]
-//     },
-//     {
-//         nome: 'tenho dezoito',
-//         idade: 18,
-//         listaDeContatos: [
-//             '13213131315', '41368413513', '564684354'
-//         ]
-//     },
-//     {
-//         nome: 'nao tenho dezoito',
-//         idade: 14,
-//         listaDeContatos: [
-//             '13213131315', '41368413513', '564684354'
-//         ]
-//     },
-//     {
-//         nome: 'to com 20',
-//         idade: 20,
-//         listaDeContatos: [
-//             '13213131315', '41368413513', '564684354'
-//         ]
-//     },
-//     {
-//         nome: 'nos eua eu sou maior',
-//         idade: 21,
-//         listaDeContatos: [
-//             '13213131315', '41368413513', '564684354'
-//         ]
-//     },
-//     {
-//         nome: 'quase subindo',
-//         idade: 80,
-//         listaDeContatos: [
-//             '13213131315', '41368413513', '564684354'
-//         ]
-//     },
-//     {
-//         nome: 'finjo q sou novo',
-//         idade: 30,
-//         listaDeContatos: [
-//             '13213131315', '41368413513', '564684354'
-//         ]
-//     },
-// ];
-
-// console.log(listaExemplo)
-
-// for (let contador = 0; contador < 7; contador = contador + 1) {
-//     if (listaExemplo[contador].idade > 18) {
-//         console.log(listaExemplo[contador].nome, 'eh maior de idade!', listaExemplo[contador].idade, 'a idade dele!')
-//     }
-// }
-
-
-// ex:1
-
-const obperiféricos = {
-    "teclado Mecanico", "Mouse Gamer", "Webcam Full HD", "item4:SSD 1TB","Processador Ryzen "
-
+for (let contador = 0; contador < perifericos.length; contador = contador + 1) {
+    console.log('Posição', contador + ':', perifericos[contador]);
 }
 
-console.log(obperiféricos)
+const computador = {
+    patrimonio: 'PAT-00123',
+    processador: 'Intel Core i5',
+    memoriaRAM: 16,
+    emManutencao: false,
+};
 
-for (let contador = 0; contador < 5; contador = contador + 1) {
-    console.log(obperiféricos[contador])
+console.log('O computador de patrimônio', computador.patrimonio, 'possui processador', computador.processador, 'e', computador.memoriaRAM + 'GB de RAM.');
+
+
+const carrinho = [
+    { nome: 'Teclado', preco: 250, quantidade: 1 },
+    { nome: 'Mouse', preco: 120.5, quantidade: 2 },
+    { nome: 'Cabo HDMI', preco: 35.9, quantidade: 3 },
+    { nome: 'Pen Drive', preco: 45, quantidade: 2 },
+];
+
+let valorTotal = 0;
+
+for (let contador = 0; contador < carrinho.length; contador = contador + 1) {
+    valorTotal = valorTotal + carrinho[contador].preco * carrinho[contador].quantidade;
+}
+
+console.log('Valor total da compra: R$', valorTotal.toFixed(2));
+
+const usuario = {
+    nome: 'Mariana Souza',
+    cargo: 'Gerente de TI',
+    permissoes: ['vendas', 'relatorios', 'estoque', 'admin'],
+};
+
+console.log('Nome:', usuario.nome);
+console.log('Cargo:', usuario.cargo);
+
+for (let contador = 0; contador < usuario.permissoes.length; contador = contador + 1) {
+    console.log('- Acesso liberado:', usuario.permissoes[contador]);
+
+    if (usuario.permissoes[contador] === 'admin') {
+        console.log('Atenção: Usuário com privilégios totais!');
+    }
+}
+
+const chamados = [
+    {
+        id: 101,
+        cliente: 'Carlos Almeida',
+        resolvido: false,
+        historico: ['Chamado aberto', 'Técnico atribuído', 'Aguardando peça'],
+    },
+    {
+        id: 102,
+        cliente: 'Fernanda Lima',
+        resolvido: true,
+        historico: ['Chamado aberto', 'Problema resolvido'],
+    },
+    {
+        id: 103,
+        cliente: 'Roberto Dias',
+        resolvido: false,
+        historico: ['Chamado aberto', 'Diagnóstico em andamento'],
+    },
+];
+
+for (let contador = 0; contador < chamados.length; contador = contador + 1) {
+    
+    if (chamados[contador].resolvido === false) {
+        console.log('ID:', chamados[contador].id);
+        console.log('Cliente:', chamados[contador].cliente);
+
+        
+        for (let contador2 = 0; contador2 < chamados[contador].historico.length; contador2 = contador2 + 1) {
+            console.log('  -', chamados[contador].historico[contador2]);
+        }
+    }
 }
